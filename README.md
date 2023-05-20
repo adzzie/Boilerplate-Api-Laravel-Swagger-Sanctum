@@ -11,19 +11,45 @@ This Boilerplate using
 - [Infyom](https://infyom.com/open-source/laravelgenerator/docs/10.0/installation) for generate business core and [Infyom Swagger](https://infyom.com/open-source/laravelgenerator/docs/generator-options) for generate swagger
 - [Migrations Generator](https://github.com/kitloong/laravel-migrations-generator) for migration from database to file migrate laravel
 
-## Install
+## Installation
 
-install this using composer:
+Installation using terminal
+
+Clone this project
+
+```bash
+git clone https://github.com/adzzie/Boilerplate-Api-Laravel-Swagger-Sanctum.git $FOLDER_NAME
+```
+
+Open your folder or directory
+
+```bash
+cd $FOLDER_NAME
+```
+
+Install this using composer:
 
 ```bash
 composer install
+```
+
+Copy file env
+
+```bash
+cp .env.example .env
+```
+
+Generate key laravel
+
+```bash
+php artisan key:generate
 ```
 
 ## Laravel Setup
 
 Setup your database in file .env
 
-```
+```php
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -31,7 +57,7 @@ DB_DATABASE=laravel-sanctum
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-
+Change to your database
 
 ## laravel Migration
 
@@ -55,7 +81,7 @@ php artisan serve
 
 Generate api from existing database 
 
-```
+```bash
 php artisan infyom:api $MODEL_NAME --fromTable --table=$TABLE_NAME
 ```
 
@@ -65,7 +91,7 @@ if generate not from existing database, please see doc in infyom website
 
 Generate endpoint in swagger 
 
-```
+```bash
 php artisan l5-swagger:generate
 ```
 
@@ -73,7 +99,7 @@ php artisan l5-swagger:generate
 
 Generate file migration from table existing in database
 
-```
+```bash
 php artisan migrate:generate --tables="$TABLE_NAME1,$TABLE_NAME2,..."
 ```
 
@@ -83,7 +109,7 @@ php artisan migrate:generate --tables="$TABLE_NAME1,$TABLE_NAME2,..."
 
 if using UUID on every id, add code trait "HasUuids" in every model:
 
-```
+```php
  use HasUuids;
 ```
 
@@ -91,7 +117,7 @@ if using UUID on every id, add code trait "HasUuids" in every model:
 
 if using Authentication in swagger add this code on every endpoint "security"
 
-```
+```php
 *      ...
 *      security={{"token":{}}},
 *      ...
