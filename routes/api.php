@@ -22,7 +22,13 @@ use Illuminate\Support\Facades\Route;
 Route::post('/auth/register', [AuthAPIController::class,'register',])->name('auth.register');
 Route::post('/auth/login', [AuthAPIController::class,'login',])->name('auth.login');
 
+Route::group(['middleware'=>['auth:sanctum']], function (){
 
-Route::resource('companies', App\Http\Controllers\API\CompanyAPIController::class)
-    ->middleware('auth:sanctum')
+    Route::post('/auth/logout', [AuthAPIController::class,'logout',])->name('auth.logout');
+    Route::get('/auth/user', [AuthAPIController::class,'getUser',])->name('auth.user');
+
+
+    Route::resource('companies', App\Http\Controllers\API\CompanyAPIController::class)
     ->except(['create', 'edit']);
+});
+

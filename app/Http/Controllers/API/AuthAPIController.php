@@ -121,4 +121,76 @@ class AuthAPIController extends AppBaseController //Controller
         }
         return $this->sendResponse($data,"successfully");
     }
+
+    /**
+     * @OA\Post(
+     *      path="/auth/logout",
+     *      summary="logout",
+     *      tags={"Auth"},
+     *      security={{"token":{}}},
+     *      description="logout user",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @OA\JsonContent(
+     *              type="object",
+     *              @OA\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @OA\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
+     */
+    public function logout(Request $request)
+    {
+        # code...
+        Auth::user()->tokens()->delete();
+
+        return $this->sendSuccess("Logout successfully");
+    }
+
+    /**
+     * @OA\Get(
+     *      path="/auth/user",
+     *      summary="Get user",
+     *      tags={"Auth"},
+     *      security={{"token":{}}},
+     *      description="Get user",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @OA\JsonContent(
+     *              type="object",
+     *              @OA\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @OA\Property(
+     *                  property="data",
+     *
+     *              ),
+     *              @OA\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
+     */
+    public function getUser(Request $request)
+    {
+        # code...
+        $user = $request->user();
+        $data =  [
+            "id"=>$user->id,
+            "name" => $user->name,
+            "email" => $user->email
+        ];
+        return $this->sendResponse($data,"successfully");
+    }
 }
