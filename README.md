@@ -19,18 +19,6 @@ install this using composer:
 composer install
 ```
 
-follow this code in your terminal
-
-```
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-php artisan vendor:publish --provider="InfyOm\Generator\InfyOmGeneratorServiceProvider"
-php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-```
-
-```
-php artisan infyom:publish
-```
-
 ## Laravel Setup
 
 Setup your database in file .env
