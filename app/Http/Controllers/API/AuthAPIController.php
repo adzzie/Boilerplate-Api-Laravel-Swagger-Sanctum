@@ -105,20 +105,19 @@ class AuthAPIController extends AppBaseController //Controller
     {
         # code...
 
-        $data =[];
-        if(Auth::attempt($request->all())){
-            $auth = Auth::user();
-            $tokenResult = $auth->createToken('auth_token')->plainTextToken;
-            // $token = $tokenResult->token;
-            // $token->expires_at = Carbon::now()->addWeeks(1);
-            // $token->save();
-
-            $data['token'] = $tokenResult;
-            $data['type'] = "Bearer";
-
-        }else{
+        if(!Auth::attempt($request->all())){
             return $this->sendError("Invalid Credential",400);
         }
+
+        $auth = Auth::user();
+        $tokenResult = $auth->createToken('auth_token')->plainTextToken;
+        // $token = $tokenResult->token;
+        // $token->expires_at = Carbon::now()->addWeeks(1);
+        // $token->save();
+
+        $data['token'] = $tokenResult;
+        $data['type'] = "Bearer";
+
         return $this->sendResponse($data,"successfully");
     }
 
