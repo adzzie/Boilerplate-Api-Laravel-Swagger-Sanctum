@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\CreatedUpdatedBy;
+use App\Traits\SoftDeletesWithBy;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\SoftDeletes; use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Tests\ApiTestTrait;
+
 /**
  * @OA\Schema(
  *      schema="Company",
@@ -85,7 +89,7 @@ use Illuminate\Database\Eloquent\Model;
  * )
  */class Company extends Model
 {
-     use SoftDeletes, HasUuids;    use HasFactory;    public $table = 'companies';
+     use SoftDeletesWithBy, CreatedUpdatedBy, HasUuids;    use HasFactory;    public $table = 'companies';
 
     public $fillable = [
         'name',

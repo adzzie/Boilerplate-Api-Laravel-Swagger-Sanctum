@@ -272,7 +272,7 @@
                         "description": "id of Company",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
@@ -319,7 +319,7 @@
                         "description": "id of Company",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
@@ -376,7 +376,7 @@
                         "description": "id of Company",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],

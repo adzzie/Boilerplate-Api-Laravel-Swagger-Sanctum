@@ -25,4 +25,5 @@ class CompanyRepository extends BaseRepository
     {
         return Company::class;
     }
+
 }

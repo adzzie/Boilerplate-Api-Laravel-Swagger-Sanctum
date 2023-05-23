@@ -113,6 +113,24 @@ if using UUID on every id, add code trait "HasUuids" in every model:
  use HasUuids;
 ```
 
+### CreatedBy and UpdatedBy
+
+if using field created_by and updated_by in every table, add trait in model:
+
+```php
+ use CreatedUpdatedBy;
+```
+
+### DeletedBy
+
+if using sofDeletes and using field deleted_by in every table, you add trait in model:
+
+```php
+ use SoftDeletesWithBy;
+```
+
+SoftDeletesWithBy extended from softDeleted.
+
 ### Security
 
 if using Authentication in swagger add this code on every endpoint "security"

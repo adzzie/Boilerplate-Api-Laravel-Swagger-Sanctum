@@ -115,7 +115,7 @@ class CompanyAPIController extends AppBaseController
      *          name="id",
      *          description="id of Company",
      *           @OA\Schema(
-     *             type="integer"
+     *             type="string"
      *          ),
      *          required=true,
      *          in="path"
@@ -164,7 +164,7 @@ class CompanyAPIController extends AppBaseController
      *          name="id",
      *          description="id of Company",
      *           @OA\Schema(
-     *             type="integer"
+     *             type="string"
      *          ),
      *          required=true,
      *          in="path"
@@ -221,7 +221,7 @@ class CompanyAPIController extends AppBaseController
      *          name="id",
      *          description="id of Company",
      *           @OA\Schema(
-     *             type="integer"
+     *             type="string"
      *          ),
      *          required=true,
      *          in="path"
