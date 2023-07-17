@@ -40,7 +40,7 @@ use InfyOm\Generator\Request\APIRequest;
  *      )
  * )
  */
-class AuthRegisterApiRequest extends APIRequest
+class AuthRegisterAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.

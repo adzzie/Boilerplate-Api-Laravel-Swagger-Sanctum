@@ -4,8 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\AppBaseController;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\API\AuthLoginApiRequest;
-use App\Http\Requests\API\AuthRegisterApiRequest;
+use App\Http\Requests\API\AuthLoginAPIRequest;
+use App\Http\Requests\API\AuthRegisterAPIRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -48,7 +48,7 @@ class AuthAPIController extends AppBaseController //Controller
      *      )
      * )
      */
-    public function register(AuthRegisterApiRequest $request): JsonResponse
+    public function register(AuthRegisterAPIRequest $request): JsonResponse
     {
         # code...
         $input = $request->all();
@@ -101,7 +101,7 @@ class AuthAPIController extends AppBaseController //Controller
      *      )
      * )
      */
-    public function login(AuthLoginApiRequest $request): JsonResponse
+    public function login(AuthLoginAPIRequest $request): JsonResponse
     {
         # code...
 

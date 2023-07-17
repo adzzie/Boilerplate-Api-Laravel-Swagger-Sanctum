@@ -10,6 +10,7 @@ This Boilerplate using
 - [Laravel Sanctum](https://laravel.com/docs/10.x/sanctum) for authentication
 - [Infyom](https://infyom.com/open-source/laravelgenerator/docs/10.0/installation) for generate business core and [Infyom Swagger](https://infyom.com/open-source/laravelgenerator/docs/generator-options) for generate swagger
 - [Migrations Generator](https://github.com/kitloong/laravel-migrations-generator) for migration from database to file migrate laravel
+- [Seed Generator](https://github.com/orangehill/iseed) for seed (migrasion data) from database to file seeder laravel
 
 ## Installation
 
@@ -102,6 +103,16 @@ Generate file migration from table existing in database
 ```bash
 php artisan migrate:generate --tables="$TABLE_NAME1,$TABLE_NAME2,..."
 ```
+
+### Generate Migration Data (Seed)
+ 
+Generate data Seeder from table existing in database
+
+```bash
+php artisan iseed $TABLE_NAME1,$TABLE_NAME2,...
+```
+
+
 
 ## Additional Information
 
